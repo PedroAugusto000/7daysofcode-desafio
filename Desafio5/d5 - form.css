@@ -1,0 +1,44 @@
+h1 {
+    text-align: center;
+}
+
+.alimentos {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 25px;
+    border: 1px solid gray;
+    border-radius: 20px;
+    text-align: center; 
+    font-size: 20px;
+}
+
+.lista {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 25px;
+    border: 1px solid gray;
+    border-radius: 20px;
+    padding: 0;
+    text-align: center;
+}
+
+h2 {
+    font-size: 22px;
+}
+
+.container {
+    display: flex;
+}
+
+.box {
+    flex: 1;
+}
+
+ul {
+    display: inline-block;
+}
+
+a {
+    color: gray;
+    font-size: 25px;
+}

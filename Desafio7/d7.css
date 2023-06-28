@@ -1,0 +1,26 @@
+.calculadora {
+max-width: 400px;
+margin: 0 auto;
+padding: 25px;
+border: 1px solid gray;
+border-radius: 20px;
+text-align: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+.resultado {
+max-width: 400px;
+margin: 0 auto;
+padding: 25px;
+border: 1px solid gray;
+border-radius: 20px;
+text-align: center; 
+}
+
+a {
+    color: gray;
+    font-size: 25px;
+}

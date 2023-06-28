@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DESAFIO 7 - Lógica de programação JS</title>
+    <link rel="stylesheet" href="d7.css" class="css">
+</head>
+<body>
+<h1>CALCULADORA</h1>
+
+<div class="calculadora">
+<label for="primeiroNum">Primeiro Número</label>
+<input type="text" id="primeiroNum" placeholder="Informe um número..."> <br> <br>
+                   
+<label for="segundoNum">Segundo Número</label>
+<input type="text" id="segundoNum" placeholder="Informe um número..."> <br>
+                    
+
+<h2>Operações</h2>
+
+<input type="radio" id="id_soma" name="operacao" value="soma">
+<label for="id_soma">Soma</label>
+
+<input type="radio" id="id_sub" name="operacao" value="subtracao">
+<label for="id_sub">Subtração</label>
+
+<input type="radio" id="id_mult" name="operacao" value="multiplicacao">
+<label for="id_mult">Multiplicação</label>
+
+<input type="radio" id="id_div" name="operacao" value="divisao">
+<label for="id_div">Divisão</label> <br> <br>
+
+<button onclick="calcula()">Calcular</button>
+</div> <br>
+
+<div class="resultado">
+<h2>RESULTADO:<span id="result"></span></h2>
+</div>
+
+<center>
+<a href="../index.html">Voltar</a>
+</center>
+
+<script>
+    function calcula() {
+        let num1 = parseFloat(document.getElementById("primeiroNum").value);
+        let num2 = parseFloat(document.getElementById("segundoNum").value);
+
+        let operacao = document.querySelector('input[name="operacao"]:checked').value;
+
+        let resultado = 0;
+                if (operacao == "soma") {
+                resultado = num1 + num2;
+
+                } else if (operacao == "subtracao") {
+                resultado = num1 - num2;
+
+                } else if (operacao == "multiplicacao") {
+                resultado = num1 * num2; 
+
+                } else if (operacao == "divisao") {
+                if (num2 != 0) {
+                resultado = num1 / num2;}
+                }
+
+                document.getElementById("result").innerHTML = resultado;
+                 }
+</script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DESAFIO 6 - Lógica de programação JS</title>
+    <link rel="stylesheet" href="d6 - form.css" class="css">
+</head>
+<body>
+    <h1>LISTA DE COMPRAS</h1>
+
+    <form id="form">
+
+    <div class="container">
+    <div class="box">
+
+    <div class="alimentos">
+        <label for="item">Nome da comida:</label>
+        <input type="text" id="item" required> <br> <br>
+
+        <p>Categoria de alimentos:</p>
+
+        <input type="radio" name="categoria" value="bebidas" required>Bebidas
+        <label for="bebidas"></label> <br>
+
+        <input type="radio" name="categoria" value="carnes" required>Carnes
+        <label for="carnes"></label> <br>
+
+        <input type="radio" name="categoria" value="congelados" required>Congelados
+        <label for="congelados"></label> <br>
+
+        <input type="radio" name="categoria" value="doces" required>Doces
+        <label for="doces"></label> <br>
+
+        <input type="radio" name="categoria" value="frutas" required>Frutas
+        <label for="frutas"></label> <br>
+
+        <input type="radio" name="categoria" value="legumes" required>Legumes
+        <label for="legumes"></label> <br>
+
+        <input type="radio" name="categoria" value="verduras" required>Verduras
+        <label for="verduras"></label> <br>
+
+        <input type="radio" name="categoria" value="laticinios" required>Laticínios
+        <label for="laticinios"></label> <br>
+
+        <input type="radio" name="categoria" value="massa" required>Massa
+        <label for="massa"></label> <br>
+
+        <button type="button" onclick="adicionarItem()">Adicionar Item</button> <br> <br>
+        
+            <a href="../index.html">Voltar</a>
+        
+    </div>
+    </div>
+
+<div class="box">
+        <div class="lista">
+        <div id="list">
+
+            <h2>Bebidas</h2>
+            <ul id="bebidasList"></ul>
+
+            <h2>Carnes</h2>
+            <ul id="carnesList"></ul>
+
+            <h2>Congelados</h2>
+            <ul id="congeladosList"></ul>
+
+            <h2>Doces</h2>
+            <ul id="docesList"></ul>
+
+            <h2>Frutas</h2>
+            <ul id="frutasList"></ul>
+
+            <h2>Legumes</h2>
+            <ul id="legumesList"></ul>
+
+            <h2>Verduras</h2>
+            <ul id="verdurasList"></ul>
+
+            <h2>Laticínios</h2>
+            <ul id="laticiniosList"></ul>
+
+            <h2>Massa</h2>
+            <ul id="massaList"></ul>
+
+        </div>
+        </div>
+        </div>
+    </form>
+</div>
+
+<script>
+function adicionarItem() {
+        var item = document.getElementById('item').value
+        var categoria = document.querySelector('input[name="categoria"]:checked').value
+
+        var list = document.getElementById(categoria + 'List')
+        var listItem = document.createElement('li')
+        listItem.textContent = item
+
+        var removeButton = document.createElement('button')
+        removeButton.textContent = 'Remover'
+        removeButton.addEventListener('click', function() {
+        list.removeChild(listItem)
+        })
+
+        listItem.appendChild(removeButton)
+        list.appendChild(listItem)
+        }
+</script>
+
+</body>
+</html>

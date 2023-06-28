@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DESAFIO 3 - Lógica de programação JS</title>
+    <link rel="stylesheet" href="d3.css" class="css">
+</head>
+<body>
+
+    <div class="formatando">
+    <h1>TECNOLOGIAS</h1>
+    <input type="button" value="Mostrar Tecnologias" onclick="mostrarTecnologias()">
+    </div>
+
+    <br> <br> 
+    <div class="tecnologias">
+    <ul id="tecnologias-lista"></ul>
+    </div> <br>
+
+<center>
+    <a href="../index.html">Voltar</a>
+<center>
+
+    <script>
+        var front_back = prompt ("Para qual área você gostaria de seguir? \n [1] para Front-End \n [2] para Back-end")
+
+        if (front_back == 1) {
+            var frontend = prompt ("Na área de Front-End você gostaria de aprender: \n [1] para Vue \n [2] para React")
+        } else {
+            var backend = prompt ("Na área de Back-End você gostaria de aprender: \n [1] para C# \n [2] para Java")
+        }
+
+        if (front_back == 1) {
+        var escolha = prompt ("Escolha uma opção: \n [1] Continuar se especializando em Front-end \n [2] Se desenvolver em Fullstack")
+        } else {
+            var escolha = prompt ("Escolha uma opção: \n [1] Continuar se especializando em Back-end \n [2] Se desenvolver em Fullstack")
+        }
+
+        if (escolha == 1) {
+        // Array para armazenar as informações 
+        var tecnologias = []; 
+
+        do {
+            var resposta = prompt("Quais são as tecnologias que você gostaria de se especializar?");
+             tecnologias.push(resposta);
+
+            var continuar = prompt("Você gostaria de aprender mais alguma tecnologia? \n [1] SIM ou [2] NÃO");
+         } while (continuar.toLowerCase() === '1');
+
+        for (var i = 0; i < tecnologias.length; i++) {
+        }
+        } else {
+            window.alert ("Obrigado por participar!")
+        }
+
+        function mostrarTecnologias() {
+            var listaElemento = document.getElementById("tecnologias-lista")
+            listaElemento.innerHTML = ""
+            tecnologias.forEach(function(tecnologia) {
+            var itemLista = document.createElement("li");
+            itemLista.textContent = tecnologia.trim(); // 
+            listaElemento.appendChild(itemLista);
+            });
+        }
+
+    </script>
+</body>
+</html>

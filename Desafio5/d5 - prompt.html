@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DESAFIO 5 - Lógica de programação JS</title>
+    <link rel="stylesheet" href="d5 - prompt.css" class="css">
+</head>
+<body>
+
+<div class="listacompras">
+    <h1>Lista de Compras</h1>
+    <button onclick="adicionarProduto()">Adicionar Produto</button>
+    <div id="lista"></div>
+</div>
+
+<center>
+<a href="../index.html">Voltar</a>
+</center>
+
+<script>
+var produtos = []
+
+    function adicionarProduto() {
+      var nome = prompt("Informe o nome do produto:")
+      var categoria = prompt("Selecione a categoria do produto:\n [1]: BEBIDAS \n [2]: CARNES \n [3]: CONGELADOS \n [4] DOCES \n [5] FRUTAS \n [6] LEGUMES \n [7] VERDURAS \n [8] LATICÍNIOS  \n [9] MASSA")
+
+
+var categoriaNome
+switch (categoria) {
+    case "1":
+    categoriaNome = "Bebidas"
+    break
+
+    case "2":
+    categoriaNome = "Carnes"
+    break
+
+    case "3":
+    categoriaNome = "Congelados"
+    break
+
+    case "4":
+    categoriaNome = "Doces"
+    break
+
+    case "5":
+    categoriaNome = "Frutas"
+    break
+
+    case "6":
+    categoriaNome = "legumes"
+    break
+
+    case "7":
+    categoriaNome = "Verduras"
+    break
+
+    case "8":
+    categoriaNome = "Laticínios"
+    break
+
+    case "9":
+    categoriaNome = "Massa"
+    break
+    }
+
+produtos.push({ nome: nome, categoria: categoriaNome })
+var adicionarMais = confirm("Deseja adicionar mais produtos?")
+    if (adicionarMais) {
+        adicionarProduto()
+        } else {
+        mostrarLista()
+    }}
+
+function mostrarLista() {
+    var produtosPorCategoria = {
+        Bebidas: [],
+        Carnes: [],
+        Congelados: [],
+        Doces: [],
+        Frutas: [],
+        Legumes: [],
+        Verduras: [],
+        Laticínios: [],
+        Massa: [],
+        }
+
+for (var i = 0; i < produtos.length; i++) {
+    var produto = produtos[i]
+    produtosPorCategoria[produto.categoria].push(produto.nome)
+    }
+
+var listaHTML = ""
+    for (var categoria in produtosPorCategoria) {
+    listaHTML += "<h2>" + categoria + "</h2>"
+    listaHTML += "<ul>"
+        for (var j = 0; j < produtosPorCategoria[categoria].length; j++) {
+          listaHTML += "<li>" + produtosPorCategoria[categoria][j] + "</li>"
+            }
+            listaHTML += "</ul>"
+            }
+
+var listaElement = document.getElementById("lista")
+listaElement.innerHTML = listaHTML
+}
+</script>
+</body>
+</html>

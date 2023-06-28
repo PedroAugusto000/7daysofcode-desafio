@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DESAFIO 4 - Lógica de programação JS</title>
+    <style>
+        a {color: gray; font-size: 25px;}
+    </style>
+</head>
+<body>
+    <a href="../index.html">Voltar</a>
+    <script>
+
+       var cont = 3 // Contador para as tentativas    
+        var numerorandomizado = Math.floor(Math.random() * 11) // Aqui gera os números aleatórios
+
+        // Começo da repetição e do "if"
+        window.alert (" JOGO DA SORTE \n Tente adivinhar um número de 1 a 10 \n Você tem TRÊS tentativas!")
+
+        for (var i = 1; i <= 3; i++) { 
+            var numero = prompt ("Informe um número:")
+            if (numero == numerorandomizado) {
+                window.alert ("PARABÉNS! \n Você acertou o número")
+                break; // Isso aqui serve para parar o loop (Não sabia)
+            } else {
+                cont = cont - 1
+                window.alert ("Você ERROU! \n Tem " + (cont) + " tentativas")
+            }
+        }
+
+        //Verificação do número
+        window.alert ("O número aleatório era: " + (numerorandomizado))
+    </script>
+    
+</body>
+</html>
